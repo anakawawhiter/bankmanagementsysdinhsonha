@@ -36,8 +36,6 @@ public class SpendAccount implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "spacc_seq")
-    @SequenceGenerator(initialValue = 1, name = "spacc_seq", sequenceName = "spendaccount_sequence")
 	@Column(name = "id") 
 	private Integer  id;
 	@Column(name = "type") 

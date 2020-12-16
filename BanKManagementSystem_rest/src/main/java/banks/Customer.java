@@ -39,8 +39,6 @@ public class Customer implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cus_seq")
-    @SequenceGenerator(initialValue = 1, name = "cus_seq", sequenceName = "customer_sequence")
 	@Column(name = "id") 
 	private int id;
 	@Column(name = "idcustomer")
