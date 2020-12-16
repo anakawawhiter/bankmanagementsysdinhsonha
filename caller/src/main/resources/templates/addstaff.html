@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add Staff</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <img th:src="@{/images/bg.png}" />
+</head>
+
+<body>
+    <form method="POST" th:action="@{/staff/add}" th:object="${staff}">
+        <h1>Add a new Staff!</h1>
+        <h3>Enter staff information in below form.</h3>
+        <table cellspacing="5" border="0">
+            <tr>
+                <td align="right"><label for="id">ID: </label></td>
+                <td align="right"><input type="text" th:field="*{id}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="idstaff">Staff ID: </label></td>
+                <td align="right"><input type="text" th:field="*{idstaff}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="name">Name: </label></td>
+                <td align="right"><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="idcard">id card: </label></td>
+                <td align="right"><input type="text" th:field="*{idcard}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="level">Level: </label></td>
+                <td align="right"><input type="text" th:field="*{level}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="position">Position: </label></td>
+                <td align="right"><input type="text" th:field="*{position}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="experience">Experience: </label></td>
+                <td align="right"><input type="text" th:field="*{experience}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="dob">Date of Birth: </label></td>
+                <td align="right"><input type="text" th:field="*{dob}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="address">Address : </label></td>
+                <td align="right"><input type="text" th:field="*{address}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="phonenumber">Phone Number : </label></td>
+                <td align="right"><input type="text" th:field="*{phonenumber}" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><br>
+                    <input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

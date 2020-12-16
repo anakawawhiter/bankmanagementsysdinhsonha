@@ -33,12 +33,12 @@ public class CustomerService {
 
 		return customerRepository.save(customer);
 	}
-    public Customer editCustomers(Customer entity) {
+    public Customer updateCustomer(Customer customer) {
     	 
-        return customerRepository.save(entity);
+        return customerRepository.save(customer);
     }
  
-    public void deleteCustomers(Integer id) {
+    public void deleteCustomer(Integer id) {
  
     	customerRepository.deleteById(id);
     }

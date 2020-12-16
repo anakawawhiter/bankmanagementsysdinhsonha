@@ -26,13 +26,11 @@ import lombok.Setter;
 import lombok.ToString;
  
 @Entity
-@Table(name = "customer")
+@AllArgsConstructor
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@Table(name="customer")
 public class Customer implements Serializable{
 	/**
 	 * 
@@ -54,11 +52,11 @@ public class Customer implements Serializable{
 	@Column(name = "phonenumber")
 	private String phonenumber;
 	
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private List<DepositAccount> depositaccount;
-    
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private List<SpendAccount> spendaccount;
+//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnore
+//    private List<DepositAccount> depositaccount;
+//    
+//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnore
+//    private List<SpendAccount> spendaccount;
 }

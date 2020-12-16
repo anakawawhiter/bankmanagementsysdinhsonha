@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns=http://www.w3.org/1999/xhtml xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Bank management system</title>
+</head>
+
+<body>
+    <h1>Welcome to my Bank</h1>
+    <img th:src="@{/images/bg.png}" />
+    <il>
+        <li> <a th:href= "@{/staff/viewAll}">Xem tat ca nhân viên</a> </li>
+        <li><a th:href= "@{/staff/search}">tim nhân viên</a> </li>
+        <li><a th:href= "@{/staff/add}">them  nhân viên</a> </li>
+        <li><a th:href= "@{/staff/del}">xoá nhân viên</a> </li>
+    </il>
+</body>
+
+</html>

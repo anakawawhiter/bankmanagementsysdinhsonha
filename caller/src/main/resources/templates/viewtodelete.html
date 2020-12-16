@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Successful!</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+    <form method="POST" th:action="@{/staff/delete}" th:object="${staff}">
+        <h1>Find Staff Successfully!</h1>
+        <table cellspacing="5" border="0">
+            <tr>
+                <td align="right"><label for="id">ID: </label></td>
+                <td align="right"><input type="text" th:field="${staff.id}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="name">Staff ID: </label></td>
+                <td align="right"><input type="text" th:field="${staff.name}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="staffID">Name: </label></td>
+                <td align="right"><input type="text" th:field="${staff.idstaff}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="staffType">ID card: </label></td>
+                <td align="right"><input type="text" th:field="${staff.idcard}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="staffType">Position: </label></td>
+                <td align="right"><input type="text" th:field="${staff.position}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="staffType">Level: </label></td>
+                <td align="right"><input type="text" th:field="${staff.level}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="address">Address: </label></td>
+                <td align="right"><input type="text" th:field="${staff.address}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="dateOfBirth">Name: </label></td>
+                <td align="right"><input type="text" th:field="${staff.dob}" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="experience">Experience : </label></td>
+                <td align="right"><input type="text" th:field="${staff.experience}" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><br>
+                    <input type="submit"  value="DELETE"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

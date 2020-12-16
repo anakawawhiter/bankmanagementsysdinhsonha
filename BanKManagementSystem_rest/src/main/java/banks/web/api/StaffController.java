@@ -55,40 +55,39 @@ public class StaffController {
 	@Autowired
 	private StaffService staffService;
 
-	@GetMapping("/getStaff")
+	@GetMapping("/staffs")
 	public ResponseEntity<List<Staff>> getAllStaffs() {
-		List<Staff> staff = staffService.getAllStaffs();
+		List<Staff> staff = staffService.getAllStaff();
 		return new ResponseEntity<>(staff, HttpStatus.OK);
 	}
 
-	@GetMapping("/getStaffById/{id}") // http://localhost:8080/getStaffById?staffId=1
+	@GetMapping("/getStaff/{id}") // http://localhost:8080/getStaffById?staffId=1
 	public ResponseEntity<Staff> getStaffById(@PathVariable("id") Integer staffId) {
 		Staff st2 = staffService.getStaffById(staffId);
 		return new ResponseEntity<>(st2, HttpStatus.OK);
 	}
 
-	@GetMapping("/checkLogin/{username},{password}") // http://localhost:8080/getStaffById?staffId=1
-	public ResponseEntity<Staff> checkLogin(@PathVariable("username") String username,
-			@PathVariable("password") String password) {
-		Staff st2 = staffService.checkLogin(username, password);
-		return new ResponseEntity<>(st2, HttpStatus.OK);
-	}
+//	@GetMapping("/checkLogin/{username},{password}") // http://localhost:8080/getStaffById?staffId=1
+//	public ResponseEntity<Staff> checkLogin(@PathVariable("username") String username,
+//			@PathVariable("password") String password) {
+//		Staff st2 = staffService.checkLogin(username, password);
+//		return new ResponseEntity<>(st2, HttpStatus.OK);
+//	}
 
-	@DeleteMapping("/deleteStaff/{id}")
-	public ResponseEntity<String> deleteStaffs(@PathVariable("id") Integer staffId) {
-		staffService.deleteStaffs(staffId);
+	@DeleteMapping("/staff/{id}")
+	public ResponseEntity<String> deleteStaff(@PathVariable("id") Integer staffId) {
+		staffService.deleteStaff(staffId);
 		return new ResponseEntity<>("Staff with ID :" + staffId + " deleted successfully", HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/up", produces = "application/json", consumes = "application/json")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Staff createEmployee(@RequestBody Staff emp) {
-		return staffService.addStaff(emp);
-	}
+	@PostMapping(path = "/staff", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Staff> addStaff(@RequestBody Staff emp) {
+        return new ResponseEntity<>(staffService.addStaff(emp), HttpStatus.CREATED);
+    }
 
 	
-    @PutMapping( path = "/up",consumes = "application/json", produces = "application/json")
-    public Staff putIngredient(@RequestBody Staff emp) {
-    return staffService.editStaffs(emp);
+    @PutMapping(consumes = "application/json", produces = "application/json", path = "/employee")
+    public ResponseEntity<Staff> updateStaff(@RequestBody Staff emp) {
+        return new ResponseEntity<>(staffService.updateStaff(emp), HttpStatus.CREATED);
     }
 }

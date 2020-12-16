@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <form method="POST" th:action="@{/staff/search}" th:object="${staff}">
+        <h1>Search a Staff!</h1>
+        <h3>Enter staff information in below form.</h3>
+        <table cellspacing="5" border="0">
+            <tr>
+                <td align="right"><label for="id">ID: </label></td>
+                <td align="right"><input type="text" th:field="*{id}" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><br>
+                    <input type="submit" value="search"></td>
+            </tr>
+    </form>
+</body>
+
+</html>

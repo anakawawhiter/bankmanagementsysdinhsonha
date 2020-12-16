@@ -23,27 +23,27 @@ public class SpendAccountController {
 	@Autowired
 	private SpendAccountService spendAccountService;
 
-	@GetMapping("/getSpendAccount")
+	@GetMapping("/spendAccounts")
 	public ResponseEntity<List<SpendAccount>> getAllSpendAccounts() {
 		List<SpendAccount> spendAccount = spendAccountService.getAllSpendAccounts();
 		return new ResponseEntity<>(spendAccount, HttpStatus.OK);
 	}
 
-	@PutMapping("/updateSpendAccount")
-	public ResponseEntity<SpendAccount> updateSpendAccounts(@RequestBody SpendAccount spendAccount) {
+	@PutMapping("/spendAccount")
+	public ResponseEntity<SpendAccount> updateSpendAccount(@RequestBody SpendAccount spendAccount) {
 
-		SpendAccount sp = spendAccountService.editSpendAccounts(spendAccount);
+		SpendAccount sp = spendAccountService.updateSpendAccount(spendAccount);
 		return new ResponseEntity<>(sp, HttpStatus.OK);
 	}
 
-	@GetMapping("/getSpendAccountById/{id}")
+	@GetMapping("/getSpendAccount/{id}")
 	public ResponseEntity<SpendAccount> getSpendAccountById(
 			@PathVariable("id") Integer spendAccountId) {
 		SpendAccount sp2 = spendAccountService.getSpendAccountById(spendAccountId);
 		return new ResponseEntity<>(sp2, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/deleteSpendAccount/{id}")
+	@DeleteMapping("/spendAccount/{id}")
 	public ResponseEntity<String> deleteSpendAccounts(
 			@PathVariable("id") Integer spendAccountId) {
 
@@ -51,8 +51,8 @@ public class SpendAccountController {
 		return new ResponseEntity<>("SpendAccount with ID :" + spendAccountId + " deleted successfully", HttpStatus.OK);
 	}
 
-	@PostMapping("/saveSpendAccount")
-	public ResponseEntity<SpendAccount> saveSpendAccount(@RequestBody SpendAccount spendAccount) {
+	@PostMapping("/spendAccount")
+	public ResponseEntity<SpendAccount> addSpendAccount(@RequestBody SpendAccount spendAccount) {
 
 		SpendAccount sp3 = spendAccountService.addSpendAccount(spendAccount);
 		return new ResponseEntity<>(sp3, HttpStatus.OK);

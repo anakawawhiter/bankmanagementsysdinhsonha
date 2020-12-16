@@ -19,7 +19,7 @@ public class StaffService {
 	@Autowired
     private StaffRepository staffRepository;
 
-    public List<Staff> getAllStaffs() {
+    public List<Staff> getAllStaff() {
         return (List<Staff>) staffRepository.findAll();
     }
 	public Staff getStaffById(Integer id) {
@@ -29,23 +29,23 @@ public class StaffService {
 		}
 		return null;
 	}    
-	public Staff checkLogin(String username, String password) {
-		Staff optCustomer = staffRepository.findByUsernameAndPassword(username,password);
-		if (optCustomer!=null) {
-			return optCustomer;
-		}
-		return null;
-	}    
+//	public Staff checkLogin(String username, String password) {
+//		Staff optCustomer = staffRepository.findByUsernameAndPassword(username,password);
+//		if (optCustomer!=null) {
+//			return optCustomer;
+//		}
+//		return null;
+//	}    
 	public Staff addStaff(Staff staff) {
 
 		return staffRepository.save(staff);
 	}	
-    public Staff editStaffs(Staff entity) {
+    public Staff updateStaff(Staff staff) {
     	 
-        return staffRepository.save(entity);
+        return staffRepository.save(staff);
     }
  
-    public void deleteStaffs(Integer id) {
+    public void deleteStaff(Integer id) {
  
     	staffRepository.deleteById(id);
     }

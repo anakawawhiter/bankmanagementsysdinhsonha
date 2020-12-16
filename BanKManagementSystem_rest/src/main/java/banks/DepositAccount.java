@@ -23,13 +23,11 @@ import lombok.Setter;
 import lombok.ToString;
  
 @Entity
-@Table(name = "depositaccount")
+@AllArgsConstructor
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@Table(name="depositaccount")
 public class DepositAccount implements Serializable{
 	/**
 	 * 

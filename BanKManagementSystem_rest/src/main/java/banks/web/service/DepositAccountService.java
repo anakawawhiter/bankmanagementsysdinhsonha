@@ -59,12 +59,12 @@ public class DepositAccountService {
 		return depositAccountRepository.save(depositAccount);
 	}
 
-	public DepositAccount editDepositAccounts(DepositAccount entity) {
+	public DepositAccount updateDepositAccount(DepositAccount entity) {
 
 		return depositAccountRepository.save(entity);
 	}
 
-	public void deleteDepositAccounts(Integer id) {
+	public void deleteDepositAccount(Integer id) {
 
 		depositAccountRepository.deleteById(id);
 	}

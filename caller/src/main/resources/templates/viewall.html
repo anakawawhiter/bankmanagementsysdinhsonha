@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Hospital</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+    <h1>Quản lý nhân viên</h1>
+    <form action="/" method="GET" th:object="${staff}">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>ID Card</th>
+                <th>Experience</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Position</th>
+                <th>Level</th>
+            </tr>
+
+            <tr th:each="staff : ${staffs}">
+                <td th:utext="${staff.id}">ID</td>
+                <td th:utext="${staff.idstaff}">Staff ID</td>
+                <td th:utext="${staff.name}">Name</td>
+                <td th:utext="${staff.idcard}">ID Card</td>
+                <td th:utext="${staff.experience}">Experience</td>
+                <td th:utext="${staff.dob}">Date of Birth</td>
+                <td th:utext="${staff.address}">Address</td>
+                <td th:utext="${staff.phonenumber}">Phone Number</td>
+                <td th:utext="${staff.position}">Position</td>
+                <td th:utext="${staff.level}">Level</td>
+            </tr>
+            <tr><input type="submit" name="ok" id=""></tr>
+        </table>
+        <div>
+        </div>
+    </form>
+</body>
+
+</html>

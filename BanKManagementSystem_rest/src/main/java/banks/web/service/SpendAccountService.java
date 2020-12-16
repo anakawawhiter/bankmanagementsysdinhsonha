@@ -59,7 +59,7 @@ public class SpendAccountService {
 		return spendAccountRepository.save(spendAccount);
 	}
 
-	public SpendAccount editSpendAccounts(SpendAccount entity) {
+	public SpendAccount updateSpendAccount(SpendAccount entity) {
 
 		return spendAccountRepository.save(entity);
 	}

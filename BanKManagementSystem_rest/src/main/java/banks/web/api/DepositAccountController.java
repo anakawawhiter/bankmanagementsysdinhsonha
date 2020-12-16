@@ -23,35 +23,35 @@ public class DepositAccountController {
 	@Autowired
 	private DepositAccountService depositAccountService;
 
-	@GetMapping("/getDepositAccount")
+	@GetMapping("/depositAccounts")
 	public ResponseEntity<List<DepositAccount>> getAllDepositAccounts() {
 		List<DepositAccount> depositAccount = depositAccountService.getAllDepositAccounts();
 		return new ResponseEntity<>(depositAccount, HttpStatus.OK);
 	}
 
-	@PutMapping("/updateDepositAccount")
-	public ResponseEntity<DepositAccount> updateDepositAccounts(@RequestBody DepositAccount depositAccount) {
+	@PutMapping("/depositAccount")
+	public ResponseEntity<DepositAccount> updateDepositAccount(@RequestBody DepositAccount depositAccount) {
 
-		DepositAccount depAcc = depositAccountService.editDepositAccounts(depositAccount);
+		DepositAccount depAcc = depositAccountService.updateDepositAccount(depositAccount);
 		return new ResponseEntity<>(depAcc, HttpStatus.OK);
 	}
 
-	@GetMapping("/getDepositAccountById/{id}")
+	@GetMapping("/getDepositAccount/{id}")
 	public ResponseEntity<DepositAccount> getDepositAccountById(
 			@PathVariable("id") Integer depositAccountId){
 		DepositAccount depositAccount = depositAccountService.getDepositAccountById(depositAccountId);
 		return new ResponseEntity<>(depositAccount, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/deleteDepositAccount/id{}")
-	public ResponseEntity<String> deleteDepositAccounts(
+	@DeleteMapping("/depositAccount/{id}")
+	public ResponseEntity<String> deleteDepositAccount(
 			@PathVariable("id") Integer depositAccountId){
 
-		depositAccountService.deleteDepositAccounts(depositAccountId);
+		depositAccountService.deleteDepositAccount(depositAccountId);
 		return new ResponseEntity<>("DepositAccount with ID :" + depositAccountId + " deleted successfully", HttpStatus.OK);
 	}
 
-	@PostMapping("/saveDepositAccount")
+	@PostMapping("/depositAccount")
 	public ResponseEntity<DepositAccount> saveDepositAccount(@RequestBody DepositAccount depositAccount) {
 
 		DepositAccount depAcc2 = depositAccountService.addDepositAccount(depositAccount);
